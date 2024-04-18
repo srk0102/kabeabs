@@ -23,8 +23,7 @@ const Gallery = () => {
       <div className="app__gallery-content flex-one flex justify-center items-center flex-col min-w-[100%] xl:pr-8 sm:min-w-[500px] ">
         <SubHeading title="Instagram" />
         <h1 className="headtext__cormorant">Photo Gallery</h1>
-        <p className="p__opensans mt-8 text-center" style={{ color: '#AAAAAA'}}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Volutpat mattis ipsum turpis elit elit scelerisque egestas mu.</p>
-        <button type="button" className="custom__button my-10 xl:mt-8">View More</button>
+        <p className="p__opensans mt-8 text-center" style={{ color: '#AAAAAA'}}>Explore our captivating photo gallery, a visual journey showcasing the essence of our establishment's charm and ambiance.</p>
       </div>
       <div className="app__gallery-images flex-one flex flex-row max-w-[90%] relative xl:max-w-[50%]">
         <div className="app__gallery-images_container flex flex-row w-max overflow-x-scroll" ref={scrollRef}>

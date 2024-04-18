@@ -2,7 +2,7 @@ import React from 'react';
 
 import './MenuItem.css';
 
-const MenuItem = ({ title, price, tags }) => (
+const MenuItem = ({ title, price, tags, description }) => (
   <div className="app__menuitem w-full my-4 mx-0 flex flex-col">
     <div className="app__menuitem-head flex justify-between items-center">
       <div className="app__menuitem-name flex-one">
@@ -16,6 +16,9 @@ const MenuItem = ({ title, price, tags }) => (
 
     <div className="app__menuitem-sub w-full mt-[0.2rem]">
       <p className="p__opensans" style={{ color: '#AAAAAA' }}>{tags}</p>
+    </div>
+    <div className="app__menuitem-sub w-full mt-[0.2rem]">
+      <p className="p__opensans" style={{ color: '#AAAAAA' }}>{description}</p>
     </div>
   </div>
 );

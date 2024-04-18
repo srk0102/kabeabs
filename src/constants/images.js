@@ -6,11 +6,11 @@ import gallery02 from '../assets/gallery02.png';
 import gallery03 from '../assets/gallery03.png';
 import gallery04 from '../assets/gallery04.png';
 import knife from '../assets/knife.png';
-import logo from '../assets/logo.png';
+import logo from '../assets/Logo.png';
 import menu from '../assets/menu.png';
 import menu2 from '../assets/menu-2.png';
 import overlaybg from '../assets/overlaybg.png';
-import spoon from '../assets/spoon.svg';
+import spoon from '../assets/kebab-icon.png';
 import welcome from '../assets/welcome.png';
 import findus from '../assets/findus.png';
 import laurels from '../assets/laurels.png';
@@ -21,6 +21,7 @@ import award05 from '../assets/award05.png';
 import sign from '../assets/sign.png';
 import quote from '../assets/quote.png';
 import gericht from '../assets/gericht.png';
+import kebab from '../assets/kebab.png';
 
 export default {
   bg,
@@ -46,4 +47,5 @@ export default {
   sign,
   quote,
   gericht,
+  kebab
 };
