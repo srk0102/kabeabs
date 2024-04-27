@@ -18,13 +18,18 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="z-nav fixed w-full flex justify-between items-center text-primary-white bg-transparent backdrop-blur-2xl sm:px-8 sm:py-4 p-4">
+    <nav className="z-nav fixed w-full flex justify-between items-center text-primary-white bg-gradient-to-b from-primary-golden backdrop-blur-2xl sm:px-8 sm:py-4 p-4">
       <div className="flex justify-start items-center">
-        <img
-          src={images.logo}
-          alt="app logo"
-          className="h-auto w-24 sm:w-40 2xl:w-52"
-        />
+      <a
+            href="/"
+            className="flex items-center space-x-3 rtl:space-x-reverse"
+          >
+            <img
+              src={images.logo}
+              className="h-auto w-24 sm:w-40 2xl:w-52"
+              alt="Indian Kababs and Wraps"
+            />
+          </a>
       </div>
       <ul className="lg:flex hidden justify-center items-center flex-1 duration-300 gap-2">
         <li className="text-primary-white my-0 mx-1 duration-150 cursor-pointer hover:text-primary-gray ">
@@ -38,7 +43,7 @@ const Navbar = () => {
         </li>
 
         <li className="text-primary-white my-0 mx-1 duration-150 cursor-pointer hover:text-primary-gray ">
-          <a href="#order">Order</a>
+          <a href="/order-menu">Order</a>
         </li>
         <li className="text-primary-white my-0 mx-1 duration-150 cursor-pointer hover:text-primary-gray ">
           <a href="#contact">Contact</a>

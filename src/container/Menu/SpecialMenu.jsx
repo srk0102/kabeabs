@@ -36,7 +36,7 @@ const SpecialMenu = () => (
     </div>
 
     <div className='mt-4'>
-    <a href="#order" type="button" className="custom__button">Order Here</a>
+    <a href="/order-menu" type="button" className="custom__button">Order Here</a>
     </div>
   </div>
 );

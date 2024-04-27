@@ -16,9 +16,7 @@ const AboutUs = () => (
         <button type="button" className="custom__button">Know More</button>
       </div>
 
-      <div className="my-1 mx-2 lg:my-8 lg:mx-16 lg:rotate-0 rotate-90 flex__center">
-        <img src={images.knife} alt="about_knife" className='h-80vwh lg:h-screen 2xl:h-70vh'/>
-      </div> 
+     
     </div>
   </div>
 );
