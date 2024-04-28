@@ -8,15 +8,16 @@ import 'react-toastify/dist/ReactToastify.css';
 
 const App = () => (
   <div>
+    
     <BrowserRouter>
       <Routes>
         <Route path='/' element={
           <>
             <Navbar />
+            <Gallery />
             <Header />
             <SpecialMenu />
             <Chef />
-            <Gallery />
             <AboutUs />
             <FindUs />
             <Footer />

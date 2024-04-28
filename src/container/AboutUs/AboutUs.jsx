@@ -8,7 +8,7 @@ const AboutUs = () => (
     <div className="absolute inset-0 flex__center">
     </div>
 
-    <div className="w-full z-2 flex__center flex-col lg:flex-row">
+    <div className="w-full z-2 flex__center flex-col lg:flex-row mt-40">
       <div className=" flex-one flex justify-end items-end flex-col text-right">
         <h1 className="headtext__cormorant">About Us</h1>
         <img src={images.spoon} alt="about_spoon" className="spoon__img" />

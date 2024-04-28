@@ -5,7 +5,7 @@ import { data, images } from '../../constants';
 import './SpecialMenu.css';
 
 const SpecialMenu = () => (
-  <div className="flex-col bg-primary-black flex__center section__padding" id="menu">
+  <div className="flex-col app__bg flex__center section__padding" id="menu">
     <div className="mb-8 m-auto flex flex-col justify-center items-center">
       <SubHeading title="Menu Designed for Your Taste Adventures"/>
       <h1 className="headtext__cormorant">Today&apos;s Special</h1>
@@ -22,7 +22,6 @@ const SpecialMenu = () => (
       </div>
 
       <div className="app__specialMenu-menu_img w-full mt-4 mb-12 mx-0 lg:w-[410px] lg:mx-8 lg:my-0 2xl:w-[650px]">
-        <img src={images.kebab} alt="menu__img" className='m-auto w-5/6 h-auto 2xl:h-[920px]'/>
       </div>
 
       <div className="app__specialMenu-menu_wraps  flex__center flex-one w-full flex-col">

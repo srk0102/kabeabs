@@ -198,7 +198,7 @@ export function Menu() {
 						<li>
 							<a
 								href="/"
-								className="block py-2 px-3 text-white bg-blue-700 rounded bg-transparent p-0  hover:text-primary-gray"
+								className="block py-2 px-3 text-white bg-blue-700 rounded bg-transparent p-0  hover:text-primary-black"
 								aria-current="page"
 							>
 								Home
@@ -208,7 +208,7 @@ export function Menu() {
 							<button
 								data-modal-target="default-modal"
 								onClick={() => setModel(!modal)}
-								className="block py-3 px-5 text-white bg-blue-700 rounded bg-transparent p-0  hover:text-primary-gray"
+								className="block py-3 px-5 text-white bg-blue-700 rounded bg-transparent p-0  hover:text-primary-black"
 							>
 								<FaShoppingCart />
 							</button>
@@ -395,13 +395,13 @@ export function Menu() {
 							categories?.map((category) => {
 								return (
 									<>
-										<Button className="bg-primary-golden" onClick={() => setCat(category)} color="">{category}</Button>
+										<Button className="bg-primary-golden hover:bg-black hover:text-white" onClick={() => setCat(category)} color="">{category}</Button>
 									</>
 								)
 							})
 						}		
 					</div>
-				<div className="grid grid-cols-2 md:grid-cols-4 gap-4 pt-5 px-3">
+				<div className="grid grid-cols-1 md:grid-cols-4 gap-4 pt-5 px-3">
 					{groupedMenu[cat].map((item) => {
 						return (
 							<>
