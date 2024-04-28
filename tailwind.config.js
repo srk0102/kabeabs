@@ -1,6 +1,11 @@
 /** @type {import('tailwindcss').Config} */
+const flowbite = require("flowbite-react/tailwind");
+
 module.exports = {
-  content: [ "./src/**/*.{js,ts,jsx,tsx}", "./src/components/**/*.{js,ts,jsx,tsx}", ],
+  content: [
+    "./src/**/*.{js,ts,jsx,tsx}", "./src/components/**/*.{js,ts,jsx,tsx}",
+    flowbite.content()
+  ],
   theme: {
     extend: {
       fontSize: {
@@ -40,7 +45,7 @@ module.exports = {
         slideBottomAnimation: 'slideBottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both',
       },
       fontFamily: {
-        CormorantUpright: ['Cormorant Upright', 'sans-serif'], 
+        CormorantUpright: ['Cormorant Upright', 'sans-serif'],
         Sans: ['sans-serif'],
       },
       // z index
@@ -101,8 +106,10 @@ module.exports = {
       screens: {
         'mobile': '450px',
         'big': '2000px',
-      },  
+      },
     },
   },
-  plugins: [],
+  plugins: [
+    flowbite.plugin(),
+  ],
 }
