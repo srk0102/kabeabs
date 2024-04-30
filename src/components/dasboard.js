@@ -3,6 +3,8 @@ import { Checkbox, Table } from "flowbite-react";
 
 import Backendless from "backendless";
 
+import { Navbar } from '../components'
+
 export const Dasboard = () => {
 
 	const [orders, setOrders] = useState([])
@@ -66,7 +68,9 @@ export const Dasboard = () => {
 	return (
 		<>
 			<div className="overflow-x-auto">
-				<Table hoverable>
+			<Navbar />
+			<h1 className='mt-72 text-4xl mb-10 text-white bg-transparent'>Today: {new Date().toLocaleDateString('en-US')}</h1>
+				<Table hoverable className='bg-transparent'>
 					<Table.Head>
 						<Table.HeadCell>S.No</Table.HeadCell>
 						<Table.HeadCell>Order ID</Table.HeadCell>
@@ -82,7 +86,7 @@ export const Dasboard = () => {
 							orders?.map((order, index) => {
 								return (
 									<>
-										<Table.Row className="bg-white dark:border-gray-700 hover:bg-gray-700 hover:text-white cursor-pointer">
+										<Table.Row className="bg-transparent hover:bg-gray-700 hover:text-white cursor-pointer">
 											<Table.Cell>{index + 1}</Table.Cell>
 											<Table.Cell className='font-bold'>{order.orderid}</Table.Cell>
 											<Table.Cell>{new Date(order.created).toLocaleDateString('en-US')}</Table.Cell>
