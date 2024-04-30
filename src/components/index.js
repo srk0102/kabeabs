@@ -13,3 +13,4 @@ export {
 };
 
 export * from './menu'
+export * from './dasboard'

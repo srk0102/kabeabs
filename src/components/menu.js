@@ -113,6 +113,7 @@ export function Menu() {
 		// Fetch user email and phone number
 		const email = UserEmail;
 		const phone = UserPhone;
+		const name = UserName;
 
 		// Create the order object
 		const orderObject = {
@@ -121,6 +122,8 @@ export function Menu() {
 			orderid: orderId,
 			phone,
 			total,
+			name,
+			completed: false
 		};
 
 		try {
@@ -221,7 +224,7 @@ export function Menu() {
 					id="default-modal"
 					tabindex="-1"
 					aria-hidden="true"
-					className="fixed left-0 right-0 z-50 w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full"
+					className="fixed w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full"
 				>
 					<div className="relative p-4 w-full max-w-2xl max-h-full">
 						<div className="relative  rounded-lg shadow bg-primary-golden">

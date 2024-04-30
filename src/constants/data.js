@@ -12,7 +12,6 @@ const kebab = [
     {
         title: 'Tandoori chicken',
         price: '$14.99',
-        tags: 'Bone in',
     },
     {
         title: 'Achari Kebab',
@@ -47,7 +46,7 @@ const wraps = [
     },
     {
         title: 'Chicken Chettinadu Wrap',
-        price: '$23.99',
+        price: '$13.99',
     },
 ];
 

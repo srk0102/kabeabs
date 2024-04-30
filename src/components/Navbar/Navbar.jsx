@@ -123,7 +123,7 @@ const Navbar = () => {
                   setToggleMenu(false);
                 }}
               >
-                <a href="#contact">Contant</a>
+                <a href="#contact">Contact</a>
                 <div className="flex items-center justify-center">
                   <div className="app__menuitem-dash w-[90px] h-[1px] bg-primary-golden mx-4 my-0" />
                 </div>

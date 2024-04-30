@@ -6,7 +6,7 @@ import './Chef.css';
 
 const Chef = () => (
   <div className="app__bg app__wrapper section__padding">
-    <div className="app__wrapper_img app__wrapper_img-reverse">
+    <div className="app__wrapper_img app__wrapper_img-reverse ">
       <img src={images.logo} alt="chef_image" />
     </div>
     <div className="app__wrapper_info flex justify-start items-start">
