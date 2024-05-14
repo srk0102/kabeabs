@@ -13,7 +13,7 @@ const Gallery = () => {
     const { current } = scrollRef;
     const maxScrollLeft = current.scrollWidth - current.clientWidth;
 
-    let scrollDistance = 300; // Default scroll distance
+    let scrollDistance = 200; // Default scroll distance
 
     // Adjust scroll distance for small screens
     if (window.innerWidth <= 768) {
@@ -52,10 +52,10 @@ const Gallery = () => {
 
   return (
     <div className="app__gallery flex__center flex-col app__bg py-16 px-8 xl:px-24 xl:flex-row">
-      <div className="app__gallery-images flex-one flex flex-row max-w-[90%] relative xl:max-w-[50%] mt-40">
+      <div className="app__gallery-images flex-one flex flex-row max-w-[90%] relative  mt-40">
         <div className="app__gallery-images_container flex flex-row w-max overflow-x-scroll" ref={scrollRef}>
           {[images.gallery01, images.gallery02, images.gallery03, images.gallery04].map((image, index) => (
-            <div className="app__gallery-images_card relative min-w-[240px] h-[320px] mr-8 flex__center sm:min-w-[301px] sm:h-[447px]" key={`gallery_image-${index + 1}`}>
+            <div className="app__gallery-images_card relative min-w-[320px] h-[320px] mr-8 flex__center sm:min-w-[447px] sm:h-[447px]" key={`gallery_image-${index + 1}`}>
               <img src={image} alt="gallery_image" className="w-full h-full object-cover opacity-100 duration-500 ease-in-out" />
               <BsInstagram className="gallery__image-icon absolute text-primary-white text-size-4xl opacity-0 duration-500 ease-in-out cursor-pointer" />
             </div>

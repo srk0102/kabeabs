@@ -16,9 +16,10 @@ const Footer = () => (
         </h1>
 
         <p className="p__opensans">
-          12919 Alcosta Blvd #6, San Ramon, CA 94583
+        1026 w Evelyn ave,109,Sunnyvale,CA94086
         </p>
         <p className="p__opensans">+1 959-999-0874</p>
+        <p className="p__opensans">+1 302-277-1773</p>
       </div>
 
       <div className="app__footer-links_logo flex-one my-8 mx-0 xl:m-4 text-left lg:text-center">
@@ -48,15 +49,19 @@ const Footer = () => (
         <h1 className="app__footer-headtext font-CormorantUpright text-primary-white font-normal leading-10 tracking-wider capitalize text-size-3xl mb-4 big:text-[51px]">
           Working Hours
         </h1>
-        <p className="p__opensans">Monday-Friday:</p>
-        <p className="p__opensans">08:00 am - 12:00 am</p>
-        <p className="p__opensans">Saturday-Sunday:</p>
-        <p className="p__opensans">07:00 am - 11:00 pm</p>
+        <p className="p__opensans">Sunday - Thursday:</p>
+        <p className="p__opensans">11:00 am - 12:30 am</p>
+        <p className="p__opensans">Friday & Saturday:</p>
+        <p className="p__opensans">11:00 am - 01:30 pm</p>
       </div>
     </div>
 
     <div className="footer__copyright mt-12">
       <p className="p__opensans">2024 Indian kebabs and wraps. All Rights reserved.</p>
+    </div>
+    <div className="footer__copyright mt-12 text-center">
+      <p className="text-white">Developed by :- Veera Sreekar Reddy & Siva Rama Krishna</p>
+      <p className="text-white">To Contact :- sreekarreddy.jv@gmail.com , ramakrishnasiva128@gmail.com</p>
     </div>
   </div>
 );

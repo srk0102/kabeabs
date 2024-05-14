@@ -224,7 +224,7 @@ export function Menu() {
 					id="default-modal"
 					tabindex="-1"
 					aria-hidden="true"
-					className="fixed w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full"
+					className="fixed w-full p-4 overflow-x-hidden z-10 overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full"
 				>
 					<div className="relative p-4 w-full max-w-2xl max-h-full">
 						<div className="relative  rounded-lg shadow bg-primary-golden">
