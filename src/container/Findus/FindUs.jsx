@@ -15,10 +15,6 @@ const FindUs = () => (
         <p className="p__opensans">Friday & Saturday: 11:00 am - 01:30 am</p>
       </div>
     </div>
-
-    <div className="app__wrapper_img">
-      <img src={images.findus} alt="finus_img" className='md:w-5/6' />
-    </div>
   </div>
 );
 

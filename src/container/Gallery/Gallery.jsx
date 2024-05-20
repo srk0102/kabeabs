@@ -11,48 +11,42 @@ const Gallery = () => {
 
   const scroll = (direction) => {
     const { current } = scrollRef;
+    const imageWidth = current.querySelector('.app__gallery-images_card').clientWidth;
+    const marginRight = parseInt(window.getComputedStyle(current.querySelector('.app__gallery-images_card')).marginRight, 10);
+    const scrollDistance = imageWidth + marginRight;
+
     const maxScrollLeft = current.scrollWidth - current.clientWidth;
-
-    let scrollDistance = 200; // Default scroll distance
-
-    // Adjust scroll distance for small screens
-    if (window.innerWidth <= 768) {
-      scrollDistance = current.clientWidth; // Scroll by the container's width
-    }
 
     if (direction === 'left') {
       current.scrollLeft -= scrollDistance;
+      if (current.scrollLeft < 0) {
+        current.scrollLeft = maxScrollLeft;
+      }
     } else {
       current.scrollLeft += scrollDistance;
-    }
-
-    // Check if reached the end of the list
-    if (direction === 'right' && current.scrollLeft >= maxScrollLeft) {
-      // If at the end, scroll back to the beginning
-      current.scrollLeft = 0;
+      if (current.scrollLeft >= maxScrollLeft) {
+        current.scrollLeft = 0;
+      }
     }
   };
 
   useEffect(() => {
-    // Define the interval function
     const startAutoScroll = () => {
       intervalRef.current = setInterval(() => {
-        scroll('right'); // Auto-scroll to the right
-      }, 3000); // Adjust the interval as needed (3000 milliseconds = 3 seconds)
+        scroll('right');
+      }, 3000);
     };
 
-    // Start auto-scrolling when the component mounts
     startAutoScroll();
 
-    // Clean up the interval when the component unmounts
     return () => {
       clearInterval(intervalRef.current);
     };
-  }, []); // Empty dependency array ensures this effect runs only once, on mount
+  }, []);
 
   return (
     <div className="app__gallery flex__center flex-col app__bg py-16 px-8 xl:px-24 xl:flex-row">
-      <div className="app__gallery-images flex-one flex flex-row max-w-[90%] relative  mt-40">
+      <div className="app__gallery-images flex-one flex flex-row max-w-[90%] relative mt-40">
         <div className="app__gallery-images_container flex flex-row w-max overflow-x-scroll" ref={scrollRef}>
           {[images.gallery01, images.gallery02, images.gallery03, images.gallery04].map((image, index) => (
             <div className="app__gallery-images_card relative min-w-[320px] h-[320px] mr-8 flex__center sm:min-w-[447px] sm:h-[447px]" key={`gallery_image-${index + 1}`}>

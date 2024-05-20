@@ -166,15 +166,6 @@ export const menu = [
         todaySpecial: false,
     },
     {
-        id: 12,
-        category: 'tandoori non veg',
-        title: 'Hariyali chicken tikka kebab',
-        price: '$13.99',
-        tags: '',
-        description: 'Tender chicken pieces coated in a vibrant green marinade crafted from fresh cilantro, mint, yogurt, and spices, grilled to perfection, offering a burst of fresh flavors and aromatic herbs.',
-        todaySpecial: false,
-    },
-    {
         id: 13,
         category: 'tandoori non veg',
         title: 'Hariyali chicken tikka kebab',
