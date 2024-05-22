@@ -38,15 +38,16 @@ export function Menu() {
   const calculateItemPrice = (item) => {
     // Extract the numeric price value (assuming format is "$XX.XX")
     const priceValue = parseFloat(item.price.slice(1));
-    return priceValue * item.quantity;
+    const itemPrice = priceValue * item.quantity;
+    const taxRate = 0.0913; // 9.13%
+    const itemPriceWithTax = itemPrice + (itemPrice * taxRate);
+    return itemPriceWithTax.toFixed(2);
   };
-
+  
   const calculateTotal = () => {
-    return cart.reduce(
-      (acc, cartItem) => acc + cartItem.price.slice(1) * cartItem.quantity,
-      0
-    );
+    return cart.reduce((acc, cartItem) => acc + parseFloat(calculateItemPrice(cartItem)), 0).toFixed(2);
   };
+  
 
   const removeFromCart = (itemToRemove) => {
     const updatedCart = cart
@@ -276,7 +277,7 @@ export function Menu() {
                   <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
                     <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-primary-golden dark:text-black ">
                       <tr>
-                        <th scope="col" className="px-6 py-3">
+                        <th scope="col" className="px-4 py-3">
                           Product name
                         </th>
                         <th scope="col" className="px-6 py-3">
@@ -286,7 +287,7 @@ export function Menu() {
                           Quantity
                         </th>
                         <th scope="col" className="px-6 py-3">
-                          totalPrice
+                          totalPrice + 9.13%
                         </th>
                       </tr>
                     </thead>
@@ -330,7 +331,9 @@ export function Menu() {
                           className="px-6 py-4 font-medium text-blackwhitespace-nowrap dark:text-white"
                         ></th>
                         <td className="px-6 py-4"></td>
-                        <td className="px-6 py-4"></td>
+                        <td className="px-6 py-4 text-black">
+                          Total Price
+                        </td>
                         <td className="px-6 py-4 text-black">
                           {calculateTotal()}
                         </td>
@@ -389,7 +392,7 @@ export function Menu() {
                   />
                 </div>
               </div>
-              <div className="flex items-center p-4 md:p-5 border-t border-gray-200 rounded-b dark:border-gray-600">
+              <div className="flex justify-center items-center p-4 md:p-5 border-t border-gray-200 rounded-b dark:border-gray-600">
                 <button
                   data-modal-hide="default-modal"
                   onClick={checkOut}
