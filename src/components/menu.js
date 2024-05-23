@@ -48,7 +48,7 @@ export function Menu() {
     );
     const taxRate = 0.0913;
     const taxAmount = total * taxRate;
-    return (taxAmount).toFixed(2);
+    return (taxAmount);
 };
 
 
@@ -59,7 +59,7 @@ export function Menu() {
     );
     const taxRate = 0.0913;
     const totalWithTax = total * (1 + taxRate);
-    return (totalWithTax).toFixed(2);
+    return (totalWithTax);
   };
 
   const removeFromCart = (itemToRemove) => {
@@ -340,7 +340,7 @@ export function Menu() {
                           className="px-6 py-4 flex justify-end font-medium text-blackwhitespace-nowrap text-black"
                         > Tax</th>
                         <td className="px-6 py-4 text-black">
-                        ${calculateTaxAmount()}
+                        ${calculateTaxAmount().toFixed(2)}
                         </td>
                         <td className="px-6 py-4"></td>
                         <td className="px-6 py-4 text-black">
@@ -353,7 +353,7 @@ export function Menu() {
                           className="px-6 py-4 flex justify-end font-medium text-blackwhitespace-nowrap text-black"
                         > Total</th>
                         <td className="px-6 py-4 text-black font-bold">
-                        ${calculateTotal()}
+                        ${calculateTotal().toFixed(2)}
                         </td>
                         <td className="px-6 py-4"></td>
                         <td className="px-6 py-4 text-black">
