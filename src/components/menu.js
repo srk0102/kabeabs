@@ -36,17 +36,31 @@ export function Menu() {
   };
 
   const calculateItemPrice = (item) => {
-    const taxPercentage = 9.13;
     // Extract the numeric price value (assuming format is "$XX.XX")
     const priceValue = parseFloat(item.price.slice(1));
-    const totalPrice = priceValue * item.quantity;
-    const taxAmount = totalPrice * (taxPercentage / 100);
-    return (totalPrice + taxAmount).toFixed(2);
+    return priceValue * item.quantity;
+  };
+
+  const calculateTaxAmount = () => {
+    const total = cart.reduce(
+      (acc, cartItem) => acc + parseFloat(cartItem.price.slice(1)) * cartItem.quantity,
+      0
+    );
+    const taxRate = 0.0913;
+    const taxAmount = total * taxRate;
+    return (taxAmount).toFixed(2);
 };
 
-const calculateTotal = () => {
-  return cart.reduce((acc, cartItem) => acc + parseFloat(calculateItemPrice(cartItem)), 0);
-};
+
+  const calculateTotal = () => {
+    const total = cart.reduce(
+      (acc, cartItem) => acc + parseFloat(cartItem.price.slice(1)) * cartItem.quantity,
+      0
+    );
+    const taxRate = 0.0913;
+    const totalWithTax = total * (1 + taxRate);
+    return (totalWithTax).toFixed(2);
+  };
 
   const removeFromCart = (itemToRemove) => {
     const updatedCart = cart
@@ -276,18 +290,16 @@ const calculateTotal = () => {
                   <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
                     <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-primary-golden dark:text-black ">
                       <tr>
-                        <th scope="col" className="px-6 py-3">
+                        <th scope="col" className="px-4 py-3">
                           Product name
                         </th>
-                        <th scope="col" className="px-6 py-3">
+                        <th scope="col" className="px-4 py-3">
                           Price
                         </th>
-                        <th scope="col" className="px-6 py-3">
+                        <th scope="col" className="px-4 py-3">
                           Quantity
                         </th>
-                        <th scope="col" className="px-6 py-3">
-                          totalPrice
-                        </th>
+                        
                       </tr>
                     </thead>
                     <tbody>
@@ -297,15 +309,15 @@ const calculateTotal = () => {
                             <tr className="dark:bg-primary-golden border-b dark:border-gray-700">
                               <th
                                 scope="row"
-                                className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-black"
+                                className="px-4 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-black"
                               >
                                 {item.title}
                               </th>
-                              <td className="px-6 py-4 text-black">
-                                {item.price}
+                              <td className="px-4 py-4 text-black">
+                              ${calculateItemPrice(item)}
                               </td>
-                              <td className="px-6 py-4">
-                                <div className="flex text-xl gap-x-8 text-black">
+                              <td className="px-4 py-4">
+                                <div className="flex text-xl gap-x-2 text-black">
                                   <HiOutlinePlus
                                     onClick={() => addToCart(item)}
                                     className="border pointer"
@@ -317,9 +329,7 @@ const calculateTotal = () => {
                                   />
                                 </div>
                               </td>
-                              <td className="px-6 py-4 text-black">
-                                {calculateItemPrice(item)}
-                              </td>
+                              
                             </tr>
                           </>
                         );
@@ -327,12 +337,27 @@ const calculateTotal = () => {
                       <tr className="dark:bg-primary-golden border-b dark:border-gray-700">
                         <th
                           scope="row"
-                          className="px-6 py-4 font-medium text-blackwhitespace-nowrap dark:text-white"
-                        ></th>
-                        <td className="px-6 py-4"></td>
+                          className="px-6 py-4 flex justify-end font-medium text-blackwhitespace-nowrap text-black"
+                        > Tax</th>
+                        <td className="px-6 py-4 text-black">
+                        ${calculateTaxAmount()}
+                        </td>
                         <td className="px-6 py-4"></td>
                         <td className="px-6 py-4 text-black">
-                          {calculateTotal()}
+                         
+                        </td>
+                      </tr>
+                      <tr className="dark:bg-primary-golden border-b dark:border-gray-700">
+                        <th
+                          scope="row"
+                          className="px-6 py-4 flex justify-end font-medium text-blackwhitespace-nowrap text-black"
+                        > Total</th>
+                        <td className="px-6 py-4 text-black font-bold">
+                        ${calculateTotal()}
+                        </td>
+                        <td className="px-6 py-4"></td>
+                        <td className="px-6 py-4 text-black">
+                         
                         </td>
                       </tr>
                     </tbody>
