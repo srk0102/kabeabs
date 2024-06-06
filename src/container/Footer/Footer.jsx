@@ -59,10 +59,7 @@ const Footer = () => (
     <div className="footer__copyright mt-12">
       <p className="p__opensans">2024 Indian kebabs and wraps. All Rights reserved.</p>
     </div>
-    <div className="footer__copyright mt-12 text-center">
-      <p className="text-white">Developed by :- Veera Sreekar Reddy & Siva Rama Krishna</p>
-      <p className="text-white">To Contact :- sreekarreddy.jv@gmail.com , ramakrishnasiva128@gmail.com</p>
-    </div>
+    
   </div>
 );
 
